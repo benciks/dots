@@ -1,0 +1,151 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;==========================================================
+
+[color]
+
+trans = #00000000
+white = #FFFFFF
+black = #000000
+
+bg = #161821
+fg = #FFFFFF
+fg-alt = #80FFFFFF
+
+acolor = #79aaeb
+curgent = #e53935
+coccupied = #43a047
+
+;==========================================================
+
+[bar/main]
+width = 100%
+height = 28 
+fixed-center = true
+wm-restack = bspwm
+
+background = ${color.bg}
+foreground = ${color.fg}
+
+border-size = 4
+border-color = ${color.bg}
+
+module-margin-left = 4
+module-margin-right = 4
+
+padding-right = 4
+;==========================================================
+
+font-0 = "Source Sans Pro:pixelsize=12.5;4"
+font-1 = "Material Icons:pixelsize=14;4"
+font-2 = "Ionicons:pixelsize=14;3"
+
+;==========================================================
+
+cursor-click = pointer
+
+tray-position = ;right
+tray-padding = 8
+tray-maxsize = 16
+
+scroll-up = bspc desktop -f prev.local
+scroll-down = bspc desktop -f next.local
+
+;== Module Location ========================================================
+
+modules-left = bspwm
+modules-center = date
+modules-right = player-mpris xkeyboard memory volume 
+ 
+;== Modules ========================================================
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+reverse-scroll = true
+margin-left = 20
+
+ws-icon-0 = Browser;
+ws-icon-1 = Code;
+ws-icon-2 = Social;
+ws-icon-3 = Music;
+ws-icon-4 = Files;
+
+label-monitor = %name%
+
+label-dimmed-foreground = ${color.fg-alt}
+
+label-focused = %icon%
+label-focused-foreground = ${color.fg}
+label-focused-padding = 4
+
+label-occupied = %icon%
+label-occupied-foreground = ${color.fg-alt}
+label-occupied-padding = 4
+
+label-urgent = %icon%
+label-urgent-foreground = ${color.fg-alt}
+label-urgent-padding = 4
+
+label-empty = %icon%
+label-empty-foreground = ${color.fg-alt} 
+label-empty-padding = 4
+
+[module/xkeyboard]
+type = internal/xkeyboard
+label-layout =  %layout%
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+[module/memory]
+type = internal/memory
+interval = 3
+label =  %percentage_used%%
+
+[module/volume]
+type = internal/pulseaudio
+use-ui-max = false
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+format-muted-prefix = " "
+label-muted = MUTE
+click-right = pavucontrol &
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
+ramp-volume-6 = 
+
+[module/date]
+type = internal/date
+interval = 5 
+
+date = "%a"
+date-alt = "%d.%m.%Y"
+
+time = %H:%M
+time-alt = %H:%M
+
+label = %date% %time%
+
+[module/player-mpris]
+type = custom/script
+exec = ~/.config/polybar/scripts/player-mpris.sh
+click-left = playerctl play-pause &
+interval = 0
+label-maxlen = 60
+
+;== EOF ========================================================
