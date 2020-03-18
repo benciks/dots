@@ -1,7 +1,7 @@
 " Plugins 
 call plug#begin('~/.config/nvim/plug')
 
-Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'itchyny/lightline.vim'
