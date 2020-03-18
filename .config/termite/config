@@ -1,11 +1,12 @@
 [options]
 allow_bold = true
 clickable_url = true
-font = IBM Plex Mono 11
+font = Terminus 12
 icon_name = terminal
 scrollback_lines = 10000
 search_wrap = true
 browser = firefox
+cell_height_scale = 1.3
 
 [colors]
 

@@ -15,7 +15,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # Screen locker
-super + l
+super + shift + l
 	betterlockscreen -l dim
 
 #
@@ -125,10 +125,35 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #
-# Screenshots
+# screenshots
 #
-Print
-	import root ~/Pictures/$(date '+%Y%m%d-%H%M%S').png
 
-shift + Print
-	import -window root ~/Pictures/$(date '+%Y%m%d-%H%M%S').png
+# Print selection and copy to clipboard
+Print
+  maim -s | xclip -selection clipboard -t image/png	
+
+# Fullscreen print and save to ~/Pictures
+super + Print
+	maim ~/Pictures/$(date '+%Y%m%d-%H%M%S').png
+
+#
+# volume keys
+#
+
+XF86AudioMute 
+  exec pamixer -t
+
+XF86AudioRaiseVolume
+  exec pamixer -i 5
+
+XF86AudioLowerVolume
+  exec pamixer -d 5
+
+#
+# notifications
+#
+
+# Show time
+super + a
+  notify-send -t 5000 -i /path/to/icon.png "`date +%H:%M`" "`date +%A` `date +%d`. `date +%B`"
+
