@@ -45,8 +45,8 @@ padding-right = 4
 ;==========================================================
 
 font-0 = "Source Sans Pro:pixelsize=12.5;4"
-font-1 = "Material Icons:pixelsize=14;4"
-font-2 = "Ionicons:pixelsize=14;3"
+font-1 = "Font Awesome 5 Free Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5 Brands Regular:pixelsize=12;3"
 
 ;==========================================================
 
@@ -63,7 +63,7 @@ scroll-down = bspc desktop -f next.local
 
 modules-left = bspwm
 modules-center = date
-modules-right = player-mpris xkeyboard memory volume 
+modules-right = volume backlight battery
  
 ;== Modules ========================================================
 
@@ -73,11 +73,11 @@ pin-workspaces = true
 reverse-scroll = true
 margin-left = 20
 
-ws-icon-0 = Browser;
-ws-icon-1 = Code;
-ws-icon-2 = Social;
-ws-icon-3 = Music;
-ws-icon-4 = Files;
+ws-icon-0 = Browser;
+ws-icon-1 = Code;
+ws-icon-2 = Social;
+ws-icon-3 = Music;
+ws-icon-4 = Files;
 
 label-monitor = %name%
 
@@ -99,36 +99,6 @@ label-empty = %icon%
 label-empty-foreground = ${color.fg-alt} 
 label-empty-padding = 4
 
-[module/xkeyboard]
-type = internal/xkeyboard
-label-layout =  %layout%
-
-; List of indicators to ignore
-blacklist-0 = num lock
-blacklist-1 = scroll lock
-
-[module/memory]
-type = internal/memory
-interval = 3
-label =  %percentage_used%%
-
-[module/volume]
-type = internal/pulseaudio
-use-ui-max = false
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-format-muted-prefix = " "
-label-muted = MUTE
-click-right = pavucontrol &
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
-ramp-volume-4 = 
-ramp-volume-5 = 
-ramp-volume-6 = 
-
 [module/date]
 type = internal/date
 interval = 5 
@@ -141,11 +111,42 @@ time-alt = %H:%M
 
 label = %date% %time%
 
-[module/player-mpris]
-type = custom/script
-exec = ~/.config/polybar/scripts/player-mpris.sh
-click-left = playerctl play-pause &
-interval = 0
-label-maxlen = 60
+[module/volume]
+type = internal/pulseaudio
+use-ui-max = false
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+format-muted-prefix = " "
+label-muted =  muted
+click-right = pavucontrol &
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/backlight]
+type = internal/xbacklight
+enable-scroll = true
+
+label =  %percentage%%
+
+[module/battery]
+type = internal/battery
+
+battery = BAT1
+adapter = ACAD
+
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = full
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
 ;== EOF ========================================================

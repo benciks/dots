@@ -23,7 +23,7 @@ bspc rule -a Thunar desktop="^5"
 killall -9 sxhkd dunst picom redshift xautolock
 sxhkd &
 feh --bg-scale ~/Walls/11.png &
-# $HOME/.config/polybar/launch.sh &
+$HOME/.config/polybar/launch.sh &
 picom &
 dunst &
 redshift &

@@ -150,10 +150,11 @@ XF86AudioLowerVolume
   exec pamixer -d 5
 
 #
-# notifications
+# brightness
 #
 
-# Show time
-super + a
-  notify-send -t 5000 -i /path/to/icon.png "`date +%H:%M`" "`date +%A` `date +%d`. `date +%B`"
+XF86MonBrightnessDown
+	xbacklight -dec 5
 
+XF86MonBrightnessUp
+	xbacklight -inc 5
