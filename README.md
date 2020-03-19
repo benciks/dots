@@ -1,10 +1,21 @@
 <h1 align="center">bspwm-dots</h1>
 
-![dotfiles](https://i.imgur.com/Bc2nzW1.png)
+![dotfiles](https://i.imgur.com/lXUCVx5.png)
 
 My current dotfiles for arch/bspwm desktop setup. For managing them, I am using [yadm](https://github.com/TheLocehiliosan/yadm). Shell is zsh with [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [spaceship-prompt](https://github.com/denysdovhan/spaceship-prompt).
 
 ## Tools
+
+### System
++ WM: [bspwm](https://github.com/baskerville/bspwm)
++ Bar: [polybar](https://github.com/polybar/polybar)
++ Application launcher: [rofi](https://github.com/davatorium/rofi)
++ Compositor: [picom](https://github.com/yshui/picom)
++ Lock Screen: [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
++ Notifications: [dunst](https://github.com/dunst-project/dunst)
++ Screenshots: [maim](https://github.com/naelstrof/maim)
++ Font: [terminus](http://terminus-font.sourceforge.net/)
++ Color scheme: [iceberg](https://github.com/cocopon/iceberg.vim)
 
 ### Development
 + **Terminal:** [Termite](https://github.com/thestinger/termite/)
