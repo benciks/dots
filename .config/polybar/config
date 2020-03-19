@@ -138,6 +138,7 @@ adapter = ACAD
 
 format-charging = <ramp-capacity> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
