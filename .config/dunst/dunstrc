@@ -26,7 +26,7 @@
 
 	icon_position       = left
 	max_icon_size       = 32
-	show_indicatiors    = false
+	show_indicators    = false
 
 [urgency_low]
 	background          = "#202026"
