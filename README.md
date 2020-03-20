@@ -1,6 +1,6 @@
 <h1 align="center">bspwm-dots</h1>
 
-![dotfiles](https://i.imgur.com/6EwIjXu.png)
+![dotfiles](https://i.imgur.com/WceUjJa.png)
 
 My current dotfiles for arch/bspwm desktop setup. For managing them, I am using [yadm](https://github.com/TheLocehiliosan/yadm). Shell is zsh with [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [spaceship-prompt](https://github.com/denysdovhan/spaceship-prompt).
 
