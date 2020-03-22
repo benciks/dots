@@ -38,8 +38,8 @@ foreground = ${color.fg}
 border-size = 4
 border-color = ${color.bg}
 
-module-margin-left = 4
-module-margin-right = 4
+module-margin-left = 2
+module-margin-right = 2
 
 padding-right = 2
 ;==========================================================
@@ -85,19 +85,19 @@ label-dimmed-foreground = ${color.fg-alt}
 
 label-focused = %icon%
 label-focused-foreground = ${color.fg}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %icon%
 label-occupied-foreground = ${color.fg-alt}
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %icon%
 label-urgent-foreground = ${color.fg-alt}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %icon%
 label-empty-foreground = ${color.fg-alt} 
-label-empty-padding = 2
+label-empty-padding = 1
 
 [module/date]
 type = internal/date
