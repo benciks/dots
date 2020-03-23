@@ -18,7 +18,7 @@ My current dotfiles for arch/bspwm desktop setup. For managing them, I am using 
 + Color scheme: [iceberg](https://github.com/cocopon/iceberg.vim)
 
 ### Development
-+ **Terminal:** [Termite](https://github.com/thestinger/termite/)
++ **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
 + **Editor:** [Code](https://github.com/Microsoft/vscode) and for quick edits [Neovim](https://github.com/neovim/neovim)
 + **Git:** CLI
 
