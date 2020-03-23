@@ -41,7 +41,7 @@ border-color = ${color.bg}
 module-margin-left = 2
 module-margin-right = 2
 
-padding-right = 2
+padding-right = 1
 ;==========================================================
 
 font-0 = "Terminus:pixelsize=15;2"
