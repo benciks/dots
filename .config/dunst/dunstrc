@@ -1,5 +1,5 @@
 [global]
-	font                = IBM Plex Mono Bold 12px
+	font                = Source Sans Pro Semibold 14px
 	monitor             = 0
 	follow              = none
 	geometry            = "350x5-40-40"
