@@ -1,0 +1,6 @@
+[submodule ".zsh/clean"]
+	path = .zsh/clean
+	url = https://github.com/akz92/clean.git
+[submodule ".zsh/zsh-autosuggestions"]
+	path = .zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
