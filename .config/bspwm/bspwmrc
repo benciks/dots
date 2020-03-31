@@ -19,13 +19,14 @@ bspc rule -a jetbrains-phpstorm desktop="^2"
 bspc rule -a discord desktop="^3"
 bspc rule -a TelegramDesktop desktop="^3"
 bspc rule -a Thunar desktop="^5"
+bspc rule -a krita state=floating
 
 pkill sxhkd
 pkill dunst
 pkill picom
 
 sxhkd &
-feh --bg-scale ~/Walls/12.jpg &
+feh --bg-scale ~/Walls/14.jpg &
 $HOME/.config/polybar/launch.sh &
 picom &
 dunst &

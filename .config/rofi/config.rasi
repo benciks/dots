@@ -46,7 +46,7 @@ configuration {
 #element {
     background-color: #00000000;
     border: 0;
-    border-radius: 15px;
+    border-radius: 8px;
     padding: 3 0  3 4 ;
 }
  

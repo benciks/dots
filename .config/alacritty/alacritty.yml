@@ -7,14 +7,11 @@ tabspaces: 2
 
 font:
   normal:
-    family: Terminus
+    family: Hack
   bold:
-    family: Terminus
+    family: Hack
     style: Bold
-  size: 12.0
-  offset:
-    x: 0
-    y: 2
+  size: 10
   
 colors:
   # Default colors
@@ -43,3 +40,5 @@ colors:
     magenta: '0xada0d3'
     cyan:    '0x95c4ce'
     white:   '0xd2d4de'
+
+  live_config_reload: false

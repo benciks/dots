@@ -6,5 +6,8 @@ SAVEHIST=100
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # theme
-source ~/.zsh/clean/clean.zsh-theme
+# source ~/.zsh/clean/clean.zsh-theme
+eval "$(starship init zsh)"
 
+# alias
+alias tmux='TERM=xterm tmux'

@@ -5,8 +5,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'dense-analysis/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
@@ -63,16 +62,6 @@ function! NumberToggle()
   endif
 endfunc
 
-" Disable Arrow Keys
-"nnoremap <up>    <nop>
-"nnoremap <down>  <nop>
-"nnoremap <left>  <nop>
-"nnoremap <right> <nop>
-"inoremap <up>    <nop>
-"inoremap <down>  <nop>
-"inoremap <left>  <nop>
-"inoremap <right> <nop>
-
 " Toggle between normal and relative numbering.
 nnoremap <leader>r :call NumberToggle()<cr>
 
@@ -83,13 +72,33 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 " Open most recently used files
 nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
-" ALE fixing
-let g:ale_enabled = 0
-let b:ale_fixers = ['prettier', 'eslint']
-let g:ale_fix_on_save = 1
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor\'
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
+" Coc
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
+nnoremap <silent> K :call CocAction('doHover')<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
 
 " Make emmet work on tab
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+" Terminal
+tnoremap <Esc> <C-\><C-n>?\$<CR>
+
