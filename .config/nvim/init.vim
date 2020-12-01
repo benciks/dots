@@ -3,7 +3,7 @@ call plug#begin('~/.config/nvim/plug')
 
 Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'cocopon/iceberg.vim'
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
@@ -11,6 +11,7 @@ Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/vim-gitbranch'
+Plug 'hugolgst/vimsence'
 
 call plug#end()
 
@@ -22,7 +23,7 @@ syntax on
 set showmatch
 set number
 set formatoptions+=o
-set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab 
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab 
 set encoding=utf8
 set nojoinspaces
 set nomodeline
@@ -38,7 +39,7 @@ endif
 
 " Lighline
 let g:lightline = {
-  \ 'colorscheme': 'iceberg',
+  \ 'colorscheme': 'tokyonight',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -50,7 +51,8 @@ let g:lightline = {
 
 " Color Scheme
 set termguicolors
-colorscheme iceberg
+
+colorscheme tokyonight
 
 " Relative numbering
 function! NumberToggle()
@@ -102,3 +104,6 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 " Terminal
 tnoremap <Esc> <C-\><C-n>?\$<CR>
 
+" Rich Presence
+let g:vimsence_small_text = 'NeoVim'
+let g:vimsence_small_image = 'neovim'

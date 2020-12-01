@@ -3,8 +3,6 @@ window:
     x: 20
     y: 20
 
-tabspaces: 2
-
 font:
   normal:
     family: Hack
@@ -12,33 +10,32 @@ font:
     family: Hack
     style: Bold
   size: 10
-  
+
+# Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
-    background: '0x161821'
-    foreground: '0xc6c8d1'
+    background: '0x1a1b26'
+    foreground: '0xa9b1d6'
 
   # Normal colors
   normal:
-    black:   '0x161821'
-    red:     '0xe27878'
-    green:   '0xb4be82'
-    yellow:  '0xe2a478'
-    blue:    '0x84a0c6'
-    magenta: '0xa093c7'
-    cyan:    '0x89b8c2'
-    white:   '0xc6c8d1'
+    black:   '0x32344a'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xad8ee6'
+    cyan:    '0x449dab'
+    white:   '0x787c99'
 
   # Bright colors
   bright:
-    black:   '0x6b7089'
-    red:     '0xe98989'
-    green:   '0xc0ca8e'
-    yellow:  '0xe9b189'
-    blue:    '0x91acd1'
-    magenta: '0xada0d3'
-    cyan:    '0x95c4ce'
-    white:   '0xd2d4de'
-
-  live_config_reload: false
+    black:   '0x444b6a'
+    red:     '0xff7a93'
+    green:   '0xb9f27c'
+    yellow:  '0xff9e64'
+    blue:    '0x7da6ff'
+    magenta: '0xbb9af7'
+    cyan:    '0x0db9d7'
+    white:   '0xacb0d0'

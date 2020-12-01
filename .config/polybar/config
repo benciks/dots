@@ -16,7 +16,7 @@ trans = #00000000
 white = #FFFFFF
 black = #000000
 
-bg = #161821
+bg = #1A1B26
 fg = #FFFFFF
 fg-alt = #80FFFFFF
 

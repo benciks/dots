@@ -16,7 +16,7 @@ super + Escape
 
 # Screen locker
 super + shift + l
-	betterlockscreen -l dim
+	betterlockscreen -l
 
 #
 # bspwm hotkeys

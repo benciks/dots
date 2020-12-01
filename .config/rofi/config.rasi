@@ -12,7 +12,7 @@ configuration {
 * {
     lines: 15;
     columns: 1;
-    background-color: #161821;
+    background-color: #1A1B26;
     border-color: #00000000;
     text-color: #EFEFEF;
     font: "Source Sans Pro 16";
@@ -21,7 +21,7 @@ configuration {
 #window {
     border: 0;
     border-radius: 4px;
-    padding: 40;
+    padding: 30;
     width: 30%;
     height: 45%;
 }
@@ -47,7 +47,7 @@ configuration {
     background-color: #00000000;
     border: 0;
     border-radius: 8px;
-    padding: 3 0  3 4 ;
+    padding: 8 0  8 12 ;
 }
  
 #element selected {
