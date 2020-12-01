@@ -26,7 +26,7 @@ pkill dunst
 pkill picom
 
 sxhkd &
-feh --bg-scale ~/Walls/19.png &
+feh --bg-scale ~/Walls/20.png &
 $HOME/.config/polybar/launch.sh &
 picom &
 dunst &
