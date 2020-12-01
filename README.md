@@ -2,7 +2,7 @@
 
 ![dotfiles](https://i.imgur.com/YuVxnvE.png)
 
-My current dotfiles for arch/bspwm desktop setup. For managing them, I am using [yadm](https://github.com/TheLocehiliosan/yadm). Shell is zsh with [starship theme](https://starship.rs/).
+My current dotfiles for void/bspwm desktop setup. For managing them, I am using [yadm](https://github.com/TheLocehiliosan/yadm). Shell is zsh with [starship theme](https://starship.rs/).
 
 ## Tools
 
