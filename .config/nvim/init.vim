@@ -2,15 +2,12 @@
 call plug#begin('~/.config/nvim/plug')
 
 Plug 'sheerun/vim-polyglot'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdcommenter'
-Plug 'mattn/emmet-vim'
+Plug 'junegunn/fzf' 
+Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'airblade/vim-gitgutter'
-Plug 'itchyny/vim-gitbranch'
 Plug 'hugolgst/vimsence'
 
 call plug#end()
@@ -41,47 +38,25 @@ endif
 let g:lightline = {
   \ 'colorscheme': 'tokyonight',
   \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-  \ },
-  \ 'component_function': {
-  \   'gitbranch': 'gitbranch#name'
-  \ },
-\ }
+  \   'right': [ [ 'lineinfo' ],
+  \              [ 'percent' ] ]
+  \ }}
 
 " Color Scheme
 set termguicolors
-
 colorscheme tokyonight
 
-" Relative numbering
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set nornu
-    set number
-  else
-    set rnu
-  endif
-endfunc
-
-" Toggle between normal and relative numbering.
-nnoremap <leader>r :call NumberToggle()<cr>
-
 " Open file menu
-nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>o :GFiles<CR>
 " Open buffer menu
-nnoremap <Leader>b :CtrlPBuffer<CR>
-" Open most recently used files
-nnoremap <Leader>f :CtrlPMRUFiles<CR>
-
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor\'
+nnoremap <Leader>b :Buffers<CR>
 
 " Coc
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
   \ ]
 
+" Add eslint and prettier only when used in project
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
 endif
@@ -90,19 +65,23 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
+" Tab complete behavior like vscode
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ?
+  \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+" Show docs in preview window
 nnoremap <silent> K :call CocAction('doHover')<CR>
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
-
-" Make emmet work on tab
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-" Terminal
-tnoremap <Esc> <C-\><C-n>?\$<CR>
 
 " Rich Presence
 let g:vimsence_small_text = 'NeoVim'
