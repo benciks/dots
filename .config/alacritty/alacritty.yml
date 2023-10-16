@@ -5,11 +5,11 @@ window:
 
 font:
   normal:
-    family: Hack
+    family: JetbrainsMono Nerd Font
   bold:
-    family: Hack
+    family: JetbrainsMono Nerd Font
     style: Bold
-  size: 10
+  size: 14
 
 # Colors (Gruvbox dark)
 colors:
